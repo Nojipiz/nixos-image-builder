@@ -33,7 +33,8 @@
   services.timesyncd.enable = true;
 
   environment.systemPackages = with pkgs; [
-
+    # It's necessary to show your fellows that you run Nixos in your server :D
+    neofetch
   ];
 
   users.users.root = { password = "nixosmachine"; };
