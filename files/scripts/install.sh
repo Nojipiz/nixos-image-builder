@@ -2,15 +2,21 @@
 
 
 # Partition disk
-cat <<FDISK | fdisk /dev/sda
+fdisk /dev/sda << FDISK
+o
 n
+p
+1
 
-
-
-
++5G
 a
-w
+n
+p
+2
 
++3G
+w
+q
 FDISK
 
 # Create filesystem
@@ -18,6 +24,10 @@ mkfs.ext4 -j -L nixos /dev/sda1
 
 # Mount filesystem
 mount LABEL=nixos /mnt
+
+# Creating Swapfile 
+mkswap -L swap /dev/sda2
+swapon /dev/sda2
 
 # Setup system
 nixos-generate-config --root /mnt

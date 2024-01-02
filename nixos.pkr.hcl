@@ -37,7 +37,7 @@ variable "iso_checksum" {
 
 variable "disk_size" {
   type    = string
-  default = "3072M"
+  default = "10240M"
 }
 
 variable "memory" {
