@@ -1,6 +1,8 @@
 # Nixos Image Builder
 This Packer template can be used to create an Nixos image that is compatible with GCP, QEMU and Xen.
 
+![neofetch on Nixos over GCP](medio/neofetch-vm.png)
+
 ## Usage
 
 ### Building an image
